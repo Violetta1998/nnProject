@@ -8,6 +8,7 @@ testDirectory = 'C:/DataSets/Signs/test/'
 trainDirectory = 'C:/DataSets/Signs/train/'
 jsonDirectory = 'C:/DataSets/Signs/jsonObjects/'
 resultingDirectory = 'C:/DataSets/Signs/augumentatedImg/'
+errorDirectory = 'C:/DataSets/Signs/augumentatedImg/error/'
 
 def getSign(name, xmin, xmax, ymin, ymax):
     img = cv2.imread(name)
@@ -15,6 +16,9 @@ def getSign(name, xmin, xmax, ymin, ymax):
     sign = img[int(ymin):int(ymax), int(xmin):int(xmax)]
     sign = cv2.resize(sign, (0, 0), fx=defaultSize / (xmax - xmin),
                       fy=defaultSize / (ymax - ymin))  # приведение к размеру 64/64
+
+    (b, g, r) = cv2.split(sign)
+    sign = cv2.merge([r, g, b])
     return sign
 
 def cropImage(name, xmin, xmax, ymin, ymax):
@@ -23,16 +27,16 @@ def cropImage(name, xmin, xmax, ymin, ymax):
     sign = getSign(name, xmin, xmax, ymin, ymax)
 
     result = newCropped.copy()
-    x = y = 70
+    x = y = 64
     result[y:y+sign.shape[0], x:x+sign.shape[1]] = sign
 
-    cv2.imshow("croppedImg", result)
+    #cv2.imshow("croppedImg", result)
     return result
 
 def scaleImg(name, xmin, xmax, ymin, ymax):
     img = cv2.imread(name)
-    newCropped = img[int(ymin) - 64:int(ymax) + 64, int(xmin) - 64:int(xmax) + 64]
 
+    newCropped = img[int(ymin) - 64:int(ymax) + 64, int(xmin) - 64:int(xmax) + 64]
     sign = getSign(name, xmin, xmax, ymin, ymax)
 
     height, width = sign.shape[:2]
@@ -41,12 +45,12 @@ def scaleImg(name, xmin, xmax, ymin, ymax):
 
     result = newCropped.copy()
     if k == 1:
-        x = y = 70
+        x = y = 60
     else:
         x = y = 35
     result[y:y + sign.shape[0], x:x + sign.shape[1]] = sign
 
-    cv2.imshow("scaledImg", result)
+    #cv2.imshow("scaledImg", result)
     return result
 
 def translateImg(name, xmin, xmax, ymin, ymax):
@@ -56,10 +60,10 @@ def translateImg(name, xmin, xmax, ymin, ymax):
     sign = getSign(name, xmin, xmax, ymin, ymax)
 
     result = newCropped.copy()
-    x = y = int(random.uniform(30, 130))
+    x = y = int(random.uniform(30, 100))
     result[y:y + sign.shape[0], x:x + sign.shape[1]] = sign
 
-    cv2.imshow("translatedImg", result)
+    #cv2.imshow("translatedImg", result)
     return result
 
 def rotateImg(name, xmin, xmax, ymin, ymax):
@@ -77,13 +81,12 @@ def rotateImg(name, xmin, xmax, ymin, ymax):
     x = y = 70
     result[y:y + sign.shape[0], x:x + sign.shape[1]] = dst
 
-    cv2.imshow("rotatedImg", result)
+    #cv2.imshow("rotatedImg", result)
     return result
 
-def resultingImage(img, name):
-    img = cv2.resize(img, (0, 0), fx=32 / (img.shape[0]),
-                      fy=32 /img.shape[1])
-    cv2.imwrite(resultingDirectory + name, img)
+def resultingImage(img, name, dir):
+    img = cv2.resize(img, (0, 0), fx=32 / (img.shape[0]), fy=32 /img.shape[1])
+    cv2.imwrite(dir + name, img)
     return img
 
 def createDataset(jsonObject):
@@ -100,34 +103,51 @@ def createDataset(jsonObject):
             res = x1, x2, y1, y2, type
             coordinates.append(res)
         img = []
-        print(signsCount)
+        imgtest = []
+
         imgPath = trainDirectory + json_data[0]
         try:
-            img = scaleImg(imgPath, coordinates[1][0], coordinates[1][1], coordinates[1][2], coordinates[1][3])
+            imgtest = cropImage(imgPath, coordinates[0][0], coordinates[0][1], coordinates[0][2], coordinates[0][3])
         except TypeError:
             imgPath = testDirectory + json_data[0]
+        except ValueError:
+            img = cv2.imread(imgPath)
+            resultingImage(img, json_data[0], errorDirectory)
+        except IndexError:
+            img = cv2.imread(imgPath)
+            resultingImage(img, json_data[0], errorDirectory)
+
         for i in range(0, int(signsCount)):
             rand = random.choice([0, 1, 2, 3])
-            if rand == 0:
-                img = scaleImg(imgPath, coordinates[i][0], coordinates[i][1], coordinates[i][2], coordinates[i][3])
-            if rand == 1:
-                img = translateImg(imgPath, coordinates[i][0], coordinates[i][1], coordinates[i][2], coordinates[i][3])
-            if rand == 2:
-                img = rotateImg(imgPath, coordinates[i][0], coordinates[i][1], coordinates[i][2], coordinates[i][3])
-            if rand == 3:
-                img = cropImage(imgPath, coordinates[i][0], coordinates[i][1], coordinates[i][2], coordinates[i][3])
-            resultingImage(img, str(coordinates[i][4]) + "." + str(i) + "." + json_data[0])
+            try:
+                if rand == 0:
+                    img = scaleImg(imgPath, coordinates[i][0], coordinates[i][1], coordinates[i][2], coordinates[i][3])
+                if rand == 1:
+                    img = translateImg(imgPath, coordinates[i][0], coordinates[i][1], coordinates[i][2],
+                                       coordinates[i][3])
+                if rand == 2:
+                    img = rotateImg(imgPath, coordinates[i][0], coordinates[i][1], coordinates[i][2], coordinates[i][3])
+                if rand == 3:
+                    img = cropImage(imgPath, coordinates[i][0], coordinates[i][1], coordinates[i][2], coordinates[i][3])
+                resultingImage(img, str(coordinates[i][4]) + "." + str(i) + "." + json_data[0], resultingDirectory)
+            except ValueError:
+                img = cv2.imread(imgPath)
+                resultingImage(img, json_data[0], errorDirectory)
+            except IndexError:
+                img = cv2.imread(imgPath)
+                resultingImage(img, json_data[0], errorDirectory)
+
 
 def getJsonName(directory):
     files = os.listdir(directory) #получаем список файлов
     objects = []
     for index in range(0, len(files)):
         objects.append(files[index])
-    print(objects)
     return objects
 
 jsonObj = getJsonName(jsonDirectory)
 for index in range(0, len(jsonObj)):
     createDataset(jsonObj[index])
+
 
 cv2.waitKey(10000000)
