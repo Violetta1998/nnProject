@@ -56,6 +56,11 @@ typesCount = countImagesOfTheType(data_dir)
 
 for index in range(0, len(typesCount)):
     files = os.listdir(data_dir)
+    objects = []
+    for i in range(0, len(files)):
+        j = files[i].find(".")
+        type = files[i][0:j]
+        objects.append(type)
     with open("annotations.json") as json_file:
         json_data = json.load(json_file)
         type = json_data["types"]
@@ -63,10 +68,12 @@ for index in range(0, len(typesCount)):
         nb_images = typesCount[type[index]]
     except KeyError:
         nb_images = 0
-    start_val_data_idx = int(nb_images * (1 - val_data_portion - test_data_portion))
-    start_test_data_idx = int(nb_images * (1 - test_data_portion))
-    print(start_val_data_idx, start_test_data_idx, nb_images, type[index])
-    files.index(0)
-    #copy_images(0, start_val_data_idx, data_dir, train_dir)
-    #copy_images(start_val_data_idx, start_test_data_idx, data_dir, val_dir)
-    #copy_images(start_test_data_idx, nb_images, data_dir, test_dir)
+    if(nb_images!=0):
+        numberInSequence = objects.index(type[index])
+    start_val_data_idx = int(nb_images / 100 * test_data_portion) + numberInSequence
+    start_test_data_idx = int(nb_images / 100 * val_data_portion) + numberInSequence + start_val_data_idx
+    #print(start_val_data_idx, start_val_data_idx, nb_images)
+    copy_images(0, start_val_data_idx, data_dir, train_dir)
+    copy_images(start_val_data_idx, start_test_data_idx, data_dir, val_dir)
+    copy_images(start_test_data_idx, numberInSequence + nb_images, data_dir, test_dir)
+    print(type[index])

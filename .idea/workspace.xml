@@ -14,28 +14,48 @@
       <file leaf-file-name="imageFilter.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/imageFilter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="132" column="74" lean-forward="true" selection-start-line="132" selection-start-column="74" selection-end-line="132" selection-end-column="74" />
+            <state relative-caret-position="127">
+              <caret line="146" column="19" selection-start-line="146" selection-start-column="19" selection-end-line="146" selection-end-column="19" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
                 <element signature="e#366#679#0" />
                 <element signature="e#730#1044#0" />
-                <element signature="e#5034#5199#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="folderGenerator.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="readJsonFile.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/readJsonFile.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="118">
+              <caret line="26" column="35" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="folderGenerator.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/folderGenerator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="68" column="10" selection-start-line="68" selection-start-column="10" selection-end-line="68" selection-end-column="10" />
+            <state relative-caret-position="402">
+              <caret line="77" column="67" selection-start-line="77" selection-start-column="67" selection-end-line="77" selection-end-column="67" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
                 <element signature="e#353#670#0" />
                 <element signature="e#1088#1595#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="teachNN.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/teachNN.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1003">
+              <caret line="67" column="44" lean-forward="true" selection-start-line="67" selection-start-column="44" selection-end-line="67" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -66,10 +86,10 @@
         <option value="$PROJECT_DIR$/jsonObjects/2.json" />
         <option value="$PROJECT_DIR$/changeImages.py" />
         <option value="$PROJECT_DIR$/changeImages.py___jb_old___" />
-        <option value="$PROJECT_DIR$/teachNN.py" />
         <option value="$PROJECT_DIR$/readJsonFile.py" />
         <option value="$PROJECT_DIR$/imageFilter.py" />
         <option value="$PROJECT_DIR$/folderGenerator.py" />
+        <option value="$PROJECT_DIR$/teachNN.py" />
       </list>
     </option>
   </component>
@@ -253,13 +273,13 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8345499" visible="true" weight="0.20386904" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8345499" visible="true" weight="0.20386904" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32843137" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32843137" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32843137" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34477124" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.37908497" />
       <window_info id="Structure" order="1" sideWeight="0.16545013" side_tool="true" weight="0.203125" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32843137" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -397,13 +417,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/teachNN.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jsonObjects/32773.json" />
     <entry file="file://C:/DataSets/Signs/jsonObjects/1012.json">
       <provider selected="true" editor-type-id="text-editor">
@@ -433,38 +446,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/imageFilter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="146" column="19" selection-start-line="146" selection-start-column="19" selection-end-line="146" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#366#679#0" />
+            <element signature="e#730#1044#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/readJsonFile.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="118">
-          <caret line="26" column="55" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="55" />
+          <caret line="26" column="35" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imageFilter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="132" column="74" lean-forward="true" selection-start-line="132" selection-start-column="74" selection-end-line="132" selection-end-column="74" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-            <element signature="e#366#679#0" />
-            <element signature="e#730#1044#0" />
-            <element signature="e#5034#5199#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/folderGenerator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="68" column="10" selection-start-line="68" selection-start-column="10" selection-end-line="68" selection-end-column="10" />
+        <state relative-caret-position="402">
+          <caret line="77" column="67" selection-start-line="77" selection-start-column="67" selection-end-line="77" selection-end-column="67" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
             <element signature="e#353#670#0" />
             <element signature="e#1088#1595#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/teachNN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1003">
+          <caret line="67" column="44" lean-forward="true" selection-start-line="67" selection-start-column="44" selection-end-line="67" selection-end-column="44" />
         </state>
       </provider>
     </entry>
