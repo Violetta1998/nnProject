@@ -11,28 +11,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="imageFilter.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="imageFilter.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/imageFilter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="123" column="54" selection-start-line="123" selection-start-column="54" selection-end-line="123" selection-end-column="54" />
+            <state relative-caret-position="92">
+              <caret line="132" column="74" lean-forward="true" selection-start-line="132" selection-start-column="74" selection-end-line="132" selection-end-column="74" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
-                <element signature="e#230#478#0" />
-                <element signature="e#529#843#0" />
-                <element signature="e#969#1510#0" />
-                <element signature="e#1439#1782#0" />
-                <element signature="e#1833#2344#0" />
+                <element signature="e#366#679#0" />
+                <element signature="e#730#1044#0" />
+                <element signature="e#5034#5199#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="10056.json" pinned="false" current-in-tab="false">
-        <entry file="file://C:/DataSets/Signs/jsonObjects/10056.json">
+      <file leaf-file-name="folderGenerator.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/folderGenerator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="145" selection-start-column="103" selection-end-column="145" />
+            <state relative-caret-position="231">
+              <caret line="68" column="10" selection-start-line="68" selection-start-column="10" selection-end-line="68" selection-end-column="10" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+                <element signature="e#353#670#0" />
+                <element signature="e#1088#1595#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -64,9 +67,9 @@
         <option value="$PROJECT_DIR$/changeImages.py" />
         <option value="$PROJECT_DIR$/changeImages.py___jb_old___" />
         <option value="$PROJECT_DIR$/teachNN.py" />
-        <option value="$PROJECT_DIR$/folderGenerator.py" />
         <option value="$PROJECT_DIR$/readJsonFile.py" />
         <option value="$PROJECT_DIR$/imageFilter.py" />
+        <option value="$PROJECT_DIR$/folderGenerator.py" />
       </list>
     </option>
   </component>
@@ -116,7 +119,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.imageFilter">
+  <component name="RunManager" selected="Python.folderGenerator">
     <configuration name="changeImages (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="roadSigns" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -135,24 +138,6 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="changeImages" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="roadSigns" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/venv" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\Виолетта\PycharmProjects\roadSigns\changeImages.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
     <configuration name="createMask" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="roadSigns" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -166,6 +151,24 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/createMask.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="folderGenerator" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="roadSigns" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/folderGenerator.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -209,18 +212,18 @@
     </configuration>
     <list>
       <item itemvalue="Python.readJsonFile" />
-      <item itemvalue="Python.changeImages" />
       <item itemvalue="Python.changeImages (1)" />
       <item itemvalue="Python.createMask" />
       <item itemvalue="Python.imageFilter" />
+      <item itemvalue="Python.folderGenerator" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.folderGenerator" />
         <item itemvalue="Python.imageFilter" />
         <item itemvalue="Python.readJsonFile" />
         <item itemvalue="Python.changeImages (1)" />
         <item itemvalue="Python.createMask" />
-        <item itemvalue="Python.changeImages" />
       </list>
     </recent_temporary>
   </component>
@@ -248,13 +251,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8345499" visible="true" weight="0.20386904" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32843137" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32843137" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32843137" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2859477" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34477124" />
       <window_info id="Structure" order="1" sideWeight="0.16545013" side_tool="true" weight="0.203125" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32843137" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -265,7 +270,6 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -284,42 +288,40 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/imageFilter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2040">
+          <caret line="120" lean-forward="true" selection-start-line="120" selection-end-line="120" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/DataSets/Signs/jsonObjects/10056.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="145" selection-start-column="103" selection-end-column="145" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/readJsonFile.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#66#1007#0" />
-            <element signature="e#1043#1228#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/changeImages.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1632">
-          <caret line="96" column="18" selection-start-line="96" selection-start-column="18" selection-end-line="96" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-            <element signature="e#110#358#0" />
-            <element signature="e#409#764#0" />
-            <element signature="e#814#1306#0" />
-            <element signature="e#1360#1702#0" />
-            <element signature="e#1753#2263#0" />
-            <element signature="e#2300#2448#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/changeImages.py" />
     <entry file="file://$PROJECT_DIR$/readJsonFile.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#66#1007#0" />
-            <element signature="e#1043#1228#0" />
           </folding>
         </state>
       </provider>
@@ -379,21 +381,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/createMask.py" />
     <entry file="file://$PROJECT_DIR$/changeImages.py" />
-    <entry file="file://$PROJECT_DIR$/changeImages.py___jb_old___">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/changeImages.py___jb_tmp___">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1167" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jsonObjects/2.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/changeImages.py___jb_tmp___" />
+    <entry file="file://$PROJECT_DIR$/jsonObjects/2.json" />
     <entry file="file://$PROJECT_DIR$/../dogscats/learnNN.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -415,51 +404,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/folderGenerator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-46">
-          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jsonObjects/32773.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="34" lean-forward="true" selection-start-column="34" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/annotations.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/jsonObjects/32773.json" />
     <entry file="file://C:/DataSets/Signs/jsonObjects/1012.json">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="48" selection-start-column="14" selection-end-column="48" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://C:/DataSets/Signs/jsonObjects/9370.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/readJsonFile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="35" column="23" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#66#1103#0" />
-            <element signature="e#1043#1228#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/DataSets/Signs/jsonObjects/10009.json">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://C:/DataSets/Signs/jsonObjects/10056.json">
       <provider selected="true" editor-type-id="text-editor">
@@ -475,17 +426,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/annotations.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1230107">
+          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readJsonFile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="26" column="55" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/imageFilter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="123" column="54" selection-start-line="123" selection-start-column="54" selection-end-line="123" selection-end-column="54" />
+        <state relative-caret-position="92">
+          <caret line="132" column="74" lean-forward="true" selection-start-line="132" selection-start-column="74" selection-end-line="132" selection-end-column="74" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
-            <element signature="e#230#478#0" />
-            <element signature="e#529#843#0" />
-            <element signature="e#969#1510#0" />
-            <element signature="e#1439#1782#0" />
-            <element signature="e#1833#2344#0" />
+            <element signature="e#366#679#0" />
+            <element signature="e#730#1044#0" />
+            <element signature="e#5034#5199#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/folderGenerator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="68" column="10" selection-start-line="68" selection-start-column="10" selection-end-line="68" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#353#670#0" />
+            <element signature="e#1088#1595#0" />
           </folding>
         </state>
       </provider>

@@ -106,16 +106,18 @@ def createDataset(jsonObject):
         imgtest = []
 
         imgPath = trainDirectory + json_data[0]
+
         try:
             imgtest = cropImage(imgPath, coordinates[0][0], coordinates[0][1], coordinates[0][2], coordinates[0][3])
         except TypeError:
             imgPath = testDirectory + json_data[0]
         except ValueError:
-            img = cv2.imread(imgPath)
-            resultingImage(img, json_data[0], errorDirectory)
-        except IndexError:
-            img = cv2.imread(imgPath)
-            resultingImage(img, json_data[0], errorDirectory)
+            try:
+                img = cv2.imread(imgPath)
+                resultingImage(img, json_data[0], errorDirectory)
+            except IndexError:
+                img = cv2.imread(imgPath)
+
 
         for i in range(0, int(signsCount)):
             rand = random.choice([0, 1, 2, 3])
