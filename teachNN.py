@@ -1,9 +1,12 @@
+import tensorflow as tf
+import math
+from keras.callbacks import LearningRateScheduler, TensorBoard
 from keras.preprocessing.image import ImageDataGenerator
 from keras.models import Sequential
 from keras.layers import Conv2D, MaxPooling2D
 from keras.layers import Activation, Dropout, Flatten, Dense
 from keras import regularizers
-from keras.optimizers import Adam
+from keras.optimizers import SGD
 
 train_dir = 'train'
 val_dir = 'val'
@@ -14,9 +17,17 @@ input_shape = (img_width, img_height, 3)
 epochs = 30
 batch_size = 16
 
-nb_train_samples = 17500
-nb_validation_samples = 3750
-nb_test_samples = 3750
+nb_train_samples = 4588
+nb_validation_samples = 1375
+nb_test_samples = 1375
+
+def step_decay(epoch):
+    initial_lrate = 0.1
+    drop = 0.5
+    epochs_drop = 10.0
+    lrate = initial_lrate * math.pow(drop, math.floor((1+epoch)/epochs_drop))
+    return lrate
+
 
 datagen = ImageDataGenerator(rescale=1. / 255)
 train_generator = datagen.flow_from_directory(
@@ -61,20 +72,28 @@ model.add(Activation('sigmoid'))
 #компилируем нейронную сеть
 model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
 
-model.compile(Adam(lr=0.0001), loss='binary_crossentropy', metrics=['accuracy'])
+# learning schedule callback
+lrate = LearningRateScheduler(step_decay)
+tbCallBack = TensorBoard(log_dir='Graph', histogram_freq=0, write_graph=True, write_images=True)
+callbacks_list = [lrate, tbCallBack]
+
+sgd = SGD(lr=0.0, momentum=0.9, decay=0.0, nesterov=False)
+model.compile(loss='binary_crossentropy', optimizer=sgd, metrics=['accuracy'])
 
 model.fit_generator(
     train_generator,
-    steps_per_epoch = nb_train_samples // batch_size,
+    steps_per_epoch=nb_train_samples // batch_size,
     epochs=epochs,
+    callbacks=callbacks_list,
     validation_data=val_generator,
     validation_steps=nb_validation_samples // batch_size)
 
 scores = model.evaluate_generator(test_generator, nb_test_samples // batch_size)
 print("Аккуратность на тестовых данных: %.2f%%" % (scores[1]*100))
+print("Test score", scores[0])
 
 model_json = model.to_json()
-json_file = open("roadSigns.json","w")
+json_file = open("roadSigns.json", "w")
 json_file.write(model_json)
 json_file.close()
 model.save_weights("roadSigns_weight.h5")
