@@ -7,7 +7,7 @@ defaultSize = 64
 testDirectory = 'C:/DataSets/Signs/test/'
 trainDirectory = 'C:/DataSets/Signs/train/'
 jsonDirectory = 'C:/DataSets/Signs/jsonObjects/'
-resultingDirectory = 'C:/DataSets/Signs/augumentatedImg/'
+resultingDirectory = 'C:/DataSets/Signs/augumentatedImg/newData/'
 errorDirectory = 'C:/DataSets/Signs/augumentatedImg/error/'
 
 def getSign(name, xmin, xmax, ymin, ymax):
@@ -122,16 +122,21 @@ def createDataset(jsonObject):
         for i in range(0, int(signsCount)):
             rand = random.choice([0, 1, 2, 3])
             try:
+            # if(coordinates[i][4] == "il60"):
                 if rand == 0:
                     img = scaleImg(imgPath, coordinates[i][0], coordinates[i][1], coordinates[i][2], coordinates[i][3])
+                    resultingImage(img, str(coordinates[i][4]) + "." + str(i) + "." + json_data[0], resultingDirectory)
                 if rand == 1:
                     img = translateImg(imgPath, coordinates[i][0], coordinates[i][1], coordinates[i][2],
                                        coordinates[i][3])
+                    resultingImage(img, str(coordinates[i][4]) + "." + str(i) + "." + json_data[0], resultingDirectory)
                 if rand == 2:
                     img = rotateImg(imgPath, coordinates[i][0], coordinates[i][1], coordinates[i][2], coordinates[i][3])
+                    resultingImage(img, str(coordinates[i][4]) + "." + str(i) + "." + json_data[0], resultingDirectory)
                 if rand == 3:
                     img = cropImage(imgPath, coordinates[i][0], coordinates[i][1], coordinates[i][2], coordinates[i][3])
-                resultingImage(img, str(coordinates[i][4]) + "." + str(i) + "." + json_data[0], resultingDirectory)
+                    resultingImage(img, str(coordinates[i][4]) + "." + str(i) + "." + json_data[0], resultingDirectory)
+                print("success")
             except ValueError:
                 img = cv2.imread(imgPath)
                 resultingImage(img, json_data[0], errorDirectory)

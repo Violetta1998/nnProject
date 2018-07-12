@@ -8,8 +8,8 @@ data_dir = 'C:/DataSets/Signs/augumentatedImg/'
 train_dir = 'train'
 val_dir = 'val'
 test_dir = 'test'
-test_data_portion = 0.15
-val_data_portion = 0.15
+test_data_portion = 15
+val_data_portion = 15
 
 
 #функция для создания подкатологов
@@ -28,7 +28,8 @@ def create_directory(dir_name):
 def copy_images(start_index, end_index, source_dir, dest_dir):
     files = os.listdir(data_dir)
     for index in range(start_index, end_index):#запись картинки в папку данного типа
-         shutil.copy2(os.path.join(source_dir, files[index]), os.path.join(dest_dir, files[index][0:files[index].find(".")] ))
+        #print(files[index][0:files[index].find(".")])
+        shutil.copy2(os.path.join(source_dir, files[index]), os.path.join(dest_dir, files[index][0:files[index].find(".")] ))
 
 def countImagesOfTheType(directory):
     files = os.listdir(directory)  # получаем список файлов
@@ -48,11 +49,12 @@ def countImagesOfTheType(directory):
             dct[type] = 1
     return dct
 
-# create_directory(train_dir)
-# create_directory(val_dir)
-# create_directory(test_dir)
+create_directory(train_dir)
+create_directory(val_dir)
+create_directory(test_dir)
 
 typesCount = countImagesOfTheType(data_dir)
+print(typesCount)
 
 for index in range(0, len(typesCount)):
     files = os.listdir(data_dir)
@@ -71,9 +73,8 @@ for index in range(0, len(typesCount)):
     if(nb_images!=0):
         numberInSequence = objects.index(type[index])
     start_val_data_idx = int(nb_images / 100 * test_data_portion) + numberInSequence
-    start_test_data_idx = int(nb_images / 100 * val_data_portion) + numberInSequence + start_val_data_idx
-    #print(start_val_data_idx, start_val_data_idx, nb_images)
-    copy_images(0, start_val_data_idx, data_dir, train_dir)
+    start_test_data_idx = int(nb_images / 100 * val_data_portion) + start_val_data_idx
+    print(type[index],numberInSequence, start_val_data_idx, start_test_data_idx, nb_images)
+    copy_images(numberInSequence, start_val_data_idx, data_dir, test_dir)
     copy_images(start_val_data_idx, start_test_data_idx, data_dir, val_dir)
-    copy_images(start_test_data_idx, numberInSequence + nb_images, data_dir, test_dir)
-    print(type[index])
+    copy_images(start_test_data_idx, numberInSequence + nb_images, data_dir, train_dir)
