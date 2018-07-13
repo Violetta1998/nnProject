@@ -48,6 +48,13 @@ test_generator = datagen.flow_from_directory(
     batch_size=batch_size,
     class_mode='binary')
 
+pred_generator=datagen.flow_from_directory(
+    val_dir,
+    target_size=(150,150),
+    batch_size=100,
+    class_mode='binary')
+
+
 # Слои с 1 по 6 используются для выделения важных признаков в изображении, а слои с 7 по 10 - для классификации.
 model = Sequential()
 model.add(Conv2D(32, (3, 3), input_shape=input_shape))
