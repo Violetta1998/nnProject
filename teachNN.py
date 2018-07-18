@@ -1,11 +1,12 @@
 import math
+import numpy as np
 from keras.callbacks import LearningRateScheduler, TensorBoard
 from keras.preprocessing.image import ImageDataGenerator
 from keras.models import Sequential
 from keras.layers import Conv2D, MaxPooling2D
 from keras.layers import Activation, Dropout, Flatten, Dense
-from keras import regularizers
 from keras.optimizers import SGD
+from keras.utils.np_utils import to_categorical
 
 train_dir = 'train'
 val_dir = 'val'
@@ -34,26 +35,27 @@ train_generator = datagen.flow_from_directory(
     train_dir,
     target_size=(img_width, img_height),
     batch_size=batch_size,
-    class_mode='binary')
+    class_mode='categorical',
+    shuffle = False)
 
 val_generator = datagen.flow_from_directory(
     val_dir,
     target_size=(img_width, img_height),
     batch_size=batch_size,
-    class_mode='binary')
+    class_mode='categorical',
+    shuffle=False)
 
 test_generator = datagen.flow_from_directory(
     test_dir,
     target_size=(img_width, img_height),
     batch_size=batch_size,
-    class_mode='binary')
+    class_mode='categorical',
+    shuffle=False)
 
-pred_generator=datagen.flow_from_directory(
-    val_dir,
-    target_size=(150,150),
-    batch_size=100,
-    class_mode='binary')
 
+train_labels = val_generator.classes
+num_classes = len(val_generator.class_indices)
+train_labels = to_categorical(train_labels, num_classes=num_classes)
 
 # Слои с 1 по 6 используются для выделения важных признаков в изображении, а слои с 7 по 10 - для классификации.
 model = Sequential()
@@ -76,23 +78,20 @@ model.add(Dropout(0.5))
 model.add(Dense(1))
 model.add(Activation('sigmoid'))
 
-# компилируем нейронную сеть
-model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
-
 # learning schedule callback
 lrate = LearningRateScheduler(step_decay)
 tbCallBack = TensorBoard(log_dir='Graph', histogram_freq=0, write_graph=True, write_images=True)
 callbacks_list = [lrate, tbCallBack]
 
 sgd = SGD(lr=0.0, momentum=0.9, decay=0.0, nesterov=False)
-model.compile(loss='binary_crossentropy', optimizer=sgd, metrics=['accuracy'])
+model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
 
 model.fit_generator(
-    train_generator,
-    steps_per_epoch=nb_train_samples // batch_size,
+    np.array(train_generator),
+    steps_per_epoch=train_labels.all(),
     epochs=epochs,
     callbacks=callbacks_list,
-    validation_data=val_generator,
+    validation_data=(val_generator, train_labels),
     validation_steps=nb_validation_samples // batch_size)
 
 scores = model.evaluate_generator(test_generator, nb_test_samples // batch_size)

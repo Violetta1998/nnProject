@@ -7,7 +7,7 @@ defaultSize = 64
 testDirectory = 'C:/DataSets/Signs/test/'
 trainDirectory = 'C:/DataSets/Signs/train/'
 jsonDirectory = 'C:/DataSets/Signs/jsonObjects/'
-resultingDirectory = 'C:/DataSets/Signs/augumentatedImg/newData/'
+resultingDirectory = 'C:/DataSets/Signs/newData/'
 errorDirectory = 'C:/DataSets/Signs/augumentatedImg/error/'
 
 def getSign(name, xmin, xmax, ymin, ymax):
@@ -16,9 +16,6 @@ def getSign(name, xmin, xmax, ymin, ymax):
     sign = img[int(ymin):int(ymax), int(xmin):int(xmax)]
     sign = cv2.resize(sign, (0, 0), fx=defaultSize / (xmax - xmin),
                       fy=defaultSize / (ymax - ymin))  # приведение к размеру 64/64
-
-    (b, g, r) = cv2.split(sign)
-    sign = cv2.merge([r, g, b])
     return sign
 
 def cropImage(name, xmin, xmax, ymin, ymax):
@@ -118,11 +115,10 @@ def createDataset(jsonObject):
             except IndexError:
                 img = cv2.imread(imgPath)
 
-
         for i in range(0, int(signsCount)):
             rand = random.choice([0, 1, 2, 3])
             try:
-            # if(coordinates[i][4] == "il60"):
+            # if(coordinates[i][4] == "io"):
                 if rand == 0:
                     img = scaleImg(imgPath, coordinates[i][0], coordinates[i][1], coordinates[i][2], coordinates[i][3])
                     resultingImage(img, str(coordinates[i][4]) + "." + str(i) + "." + json_data[0], resultingDirectory)
@@ -144,17 +140,15 @@ def createDataset(jsonObject):
                 img = cv2.imread(imgPath)
                 resultingImage(img, json_data[0], errorDirectory)
 
-
 def getJsonName(directory):
-    files = os.listdir(directory) #получаем список файлов
+    files = os.listdir(directory)#получаем список файлов
     objects = []
     for index in range(0, len(files)):
         objects.append(files[index])
     return objects
 
 jsonObj = getJsonName(jsonDirectory)
-for index in range(0, len(jsonObj)):
+for index in range(8100, len(jsonObj)):
     createDataset(jsonObj[index])
-
 
 cv2.waitKey(10000000)
