@@ -11,13 +11,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="teachNN.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="teachNN.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/teachNN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="48" column="13" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
+            <state relative-caret-position="323">
+              <caret line="89" column="4" lean-forward="true" selection-start-line="89" selection-start-column="4" selection-end-line="89" selection-end-column="13" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dataPredictions.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dataPredictions.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="18" lean-forward="true" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -52,9 +64,10 @@
         <option value="$PROJECT_DIR$/changeImages.py___jb_old___" />
         <option value="$PROJECT_DIR$/readJsonFile.py" />
         <option value="$PROJECT_DIR$/folderGenerator.py" />
-        <option value="$PROJECT_DIR$/dataPredictions.py" />
         <option value="$PROJECT_DIR$/imageFilter.py" />
+        <option value="$PROJECT_DIR$/tfrecords.py" />
         <option value="$PROJECT_DIR$/teachNN.py" />
+        <option value="$PROJECT_DIR$/dataPredictions.py" />
       </list>
     </option>
   </component>
@@ -104,7 +117,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.teachNN">
+  <component name="RunManager" selected="Python.dataPredictions">
     <configuration name="dataPredictions" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="roadSigns" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -204,10 +217,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.dataPredictions" />
         <item itemvalue="Python.teachNN" />
         <item itemvalue="Python.folderGenerator" />
         <item itemvalue="Python.imageFilter" />
-        <item itemvalue="Python.dataPredictions" />
         <item itemvalue="Python.readJsonFile" />
       </list>
     </recent_temporary>
@@ -236,15 +249,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.78109455" visible="true" weight="0.28943452" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7815126" visible="true" weight="0.28943452" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32843137" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5014881" side_tool="true" visible="true" weight="0.34313726" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.3891369" side_tool="true" visible="true" weight="0.22222222" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32843137" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.3267974" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.61160713" weight="0.47712418" />
-      <window_info id="Structure" order="1" sideWeight="0.21890548" side_tool="true" visible="true" weight="0.28943452" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.4985119" visible="true" weight="0.34313726" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.6108631" visible="true" weight="0.22222222" />
+      <window_info id="Structure" order="1" sideWeight="0.2184874" side_tool="true" visible="true" weight="0.28943452" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49776787" weight="0.19607843" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39869282" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -268,7 +282,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="23" />
+      <option name="time" value="24" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -510,33 +524,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dataPredictions.py">
+    <entry file="file://$PROJECT_DIR$/tfrecords.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imageFilter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="119" column="16" lean-forward="true" selection-start-line="119" selection-start-column="16" selection-end-line="119" selection-end-column="16" />
+        <state relative-caret-position="221">
+          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/folderGenerator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="55" column="25" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
+        <state relative-caret-position="288">
+          <caret line="77" column="5" lean-forward="true" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
+          <folding>
+            <element signature="e#287#621#0" />
+            <element signature="e#733#1027#0" />
+            <element signature="e#1070#1545#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imageFilter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-187">
+          <caret line="72" column="12" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/teachNN.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="48" column="13" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
+        <state relative-caret-position="323">
+          <caret line="89" column="4" lean-forward="true" selection-start-line="89" selection-start-column="4" selection-end-line="89" selection-end-column="13" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataPredictions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="18" lean-forward="true" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>
